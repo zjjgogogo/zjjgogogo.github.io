@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DailySudoKu-MINI - Your Daily Moment of Zen</title>
+    <style>
+        /* 基础纸张与排版设定 */
+        body {
+            background-color: #FDFBF7; /* 温暖羊皮纸色 */
+            color: #333333;
+            font-family: 'Georgia', 'Times New Roman', serif; /* 印刷衬线体 */
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-image: radial-gradient(#E0D8C8 1px, transparent 1px);
+            background-size: 40px 40px; /* 极淡的点阵背景，增加手帐感 */
+        }
+        
+        /* 容器与布局 */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* 页眉区域 */
+        header {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+        .studio-name {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #777777;
+            margin-bottom: 20px;
+            display: block;
+        }
+        h1 {
+            font-size: 48px;
+            color: #2C3E50; /* 墨水蓝 */
+            margin: 0 0 15px;
+            font-weight: normal;
+        }
+        .subtitle {
+            font-size: 20px;
+            color: #555555; /* 铅笔灰 */
+            max-width: 500px;
+            margin: 0 auto 40px;
+            font-style: italic;
+        }
+
+        /* 核心视觉与下载区 */
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 80px;
+            gap: 40px;
+        }
+        .hero-text {
+            flex: 1;
+        }
+        .hero-text p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .download-btn {
+            display: inline-block;
+            background-color: #2C3E50;
+            color: #FDFBF7;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        .download-btn:hover {
+            background-color: #1A252F;
+        }
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+        /* 这里预留了手机实机图的边框 */
+        .mockup-placeholder {
+            width: 280px;
+            height: 560px;
+            border: 2px solid #2C3E50;
+            border-radius: 40px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #FDFBF7;
+            box-shadow: 15px 15px 0px rgba(44, 62, 80, 0.1); /* 复古阴影 */
+            position: relative;
+        }
+        .mockup-placeholder::before {
+            content: "App Screenshot Here";
+            color: #999;
+            font-style: italic;
+        }
+
+        /* 特色功能区 */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+            border-top: 1px solid #E0D8C8;
+            padding-top: 60px;
+        }
+        .feature-card h3 {
+            color: #2C3E50;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .feature-card p {
+            font-size: 16px;
+            color: #555555;
+        }
+
+        /* 页脚 */
+        footer {
+            text-align: center;
+            border-top: 1px solid #E0D8C8;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            color: #777;
+            font-size: 14px;
+        }
+        footer a {
+            color: #8C5A4C; /* 印章红 */
+            text-decoration: none;
+            margin: 0 10px;
+            border-bottom: 1px dotted #8C5A4C;
+        }
+        footer a:hover {
+            color: #A06B5C;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            h1 { font-size: 36px; }
+            .hero-text { margin-bottom: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <span class="studio-name">James Jaw</span>
+            <h1>DailySudoKu-MINI</h1>
+            <p class="subtitle">Just you, pen, and paper. A daily moment of focus.</p>
+        </header>
+
+        <div class="hero-section">
+            <div class="hero-text">
+                <p>Step away from the noise. We designed a beautifully crafted, ad-free Sudoku mini-journal that feels just like writing in a physical notebook. Take a few minutes each day to slow down, breathe, and find your flow state through the beauty of numbers.</p>
+                <a href="#" class="download-btn">Download on the App Store</a>
+            </div>
+            <div class="hero-image">
+                <div class="mockup-placeholder"></div>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <h3>A New Page Every Day</h3>
+                <p>Every day brings a carefully curated new puzzle. Make it your morning coffee companion or your bedtime wind-down routine.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Warm Paper Aesthetic</h3>
+                <p>Crafted with a soothing, textured parchment background that is gentle on the eyes. Enjoy the satisfying scratch of a pencil.</p>
+            </div>
+            <div class="feature-card">
+                <h3>100% Ad-Free</h3>
+                <p>No flashing banners, no tracking, no timers to stress you out. Just pure, uninterrupted logic solving. Powered entirely by player tips.</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 James Jaw. All rights reserved.</p>
+            <p>
+                <a href="support.html">Support</a> | 
+                <a href="privacy.html">Privacy Policy</a>
+            </p>
+        </footer>
+    </div>
+
+</body>
+</html>
