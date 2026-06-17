@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Challenge</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            display: flex; justify-content: center; align-items: center;
+            min-height: 100vh; background: #f5f0eb; color: #333;
+        }
+        .card {
+            background: white; border-radius: 20px; padding: 40px 30px;
+            text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1); max-width: 360px;
+        }
+        .icon { font-size: 48px; margin-bottom: 16px; }
+        h1 { font-size: 22px; margin-bottom: 8px; }
+        p { font-size: 14px; color: #666; margin-bottom: 24px; }
+        .btn {
+            display: inline-block; padding: 14px 32px; border-radius: 12px;
+            font-size: 16px; font-weight: 600; text-decoration: none; color: white;
+            background: #4a90d9;
+        }
+        .store-link { margin-top: 16px; font-size: 13px; color: #999; }
+        .store-link a { color: #4a90d9; }
+    </style>
+    <script>
+        // Get challenge code from URL
+        const params = new URLSearchParams(window.location.search);
+        const code = params.get('code');
+        const deepLink = 'daily-sudoku://challenge' + (code ? '?code=' + encodeURIComponent(code) : '');
+
+        // App Store link - replace with your actual App Store ID after publishing
+        const appStoreUrl = 'https://apps.apple.com/app/daily-sudoku/6761034906';
+
+        function openApp() {
+            // Try to open the app
+            window.location.href = deepLink;
+
+            // If app doesn't open within 2 seconds, redirect to App Store
+            setTimeout(function() {
+                window.location.href = appStoreUrl;
+            }, 2000);
+        }
+    </script>
+</head>
+<body>
+    <div class="card">
+        <div class="icon">🧩</div>
+        <h1>Sudoku Challenge!</h1>
+        <p>A friend has challenged you to a Sudoku puzzle. Open DailySudoku to accept!</p>
+        <a class="btn" href="javascript:void(0)" onclick="openApp()">Open Challenge</a>
+        <div class="store-link">
+            Don't have the app?
+            <a href="javascript:void(0)" onclick="window.location.href=appStoreUrl">Download from App Store</a>
+        </div>
+    </div>
+
+    <script>
+        // Auto-trigger on page load
+        openApp();
+    </script>
+</body>
+</html>
