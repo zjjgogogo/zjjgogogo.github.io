@@ -1,31 +1,73 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="page_icon.png">
     <title>Sudoku Challenge</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-            display: flex; justify-content: center; align-items: center;
-            min-height: 100vh; background: #f5f0eb; color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f5f0eb;
+            color: #333;
         }
+
         .card {
-            background: white; border-radius: 20px; padding: 40px 30px;
-            text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1); max-width: 360px;
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 360px;
         }
-        .icon { font-size: 48px; margin-bottom: 16px; }
-        h1 { font-size: 22px; margin-bottom: 8px; }
-        p { font-size: 14px; color: #666; margin-bottom: 24px; }
+
+        .icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 24px;
+        }
+
         .btn {
-            display: inline-block; padding: 14px 32px; border-radius: 12px;
-            font-size: 16px; font-weight: 600; text-decoration: none; color: white;
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            color: white;
             background: #4a90d9;
         }
-        .store-link { margin-top: 16px; font-size: 13px; color: #999; }
-        .store-link a { color: #4a90d9; }
+
+        .store-link {
+            margin-top: 16px;
+            font-size: 13px;
+            color: #999;
+        }
+
+        .store-link a {
+            color: #4a90d9;
+        }
     </style>
     <script>
         // Get challenge code from URL
@@ -38,17 +80,20 @@
 
         function openApp() {
             // Try to open the app
-            window.location.href = deepLink;
+            setTimeout(function () {
+                window.location.href = deepLink;
+            }, 500)
 
             // If app doesn't open within 2 seconds, redirect to App Store
-            setTimeout(function() {
+            setTimeout(function () {
                 window.location.href = appStoreUrl;
-            }, 2000);
+            }, 3000);
         }
     </script>
 </head>
+
 <body>
-    <div class="card"> 
+    <div class="card">
         <img class="icon" src="page_icon.png" />
         <h1>Sudoku Challenge!</h1>
         <p>A friend has challenged you to a Sudoku puzzle. Open DailySudoku to accept!</p>
@@ -64,4 +109,5 @@
         openApp();
     </script>
 </body>
+
 </html>
